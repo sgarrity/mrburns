@@ -10,6 +10,8 @@
 @import "font-awesome/font-awesome.less";
 @import "map.less";
 @import "stats.less";
+@import "animate.less";
+@import "animation.less";
 
 * {
   .box-sizing(border-box);
@@ -50,6 +52,7 @@ header {
     position: relative;
     z-index: 2;
     padding: 20px 40px;
+    .transition(all .3s ease-in-out);
     h1 {
         position: absolute;
         top: 20px;
