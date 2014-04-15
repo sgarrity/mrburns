@@ -126,13 +126,14 @@ $(document).ready(function () {
     function setMode(mode) {
         console.log('setting mode to ', mode);
         if (mode === 'desktop') {
-            $('.choices-module')
-                .appendTo($('#choice-modal-choice-page'))
-                .removeClass('visible-xs');
+            $('.choices-wrapper').appendTo($('#choice-modal-choice-page'));
+            $('.choice-footer-container').appendTo($('#choice-modal .modal-content'));
+            $('.choice-footnotes').appendTo($('#choice-modal .modal-dialog'));
         } else {
-            $('.choices-module')
-                .prependTo($('.wrapper'))
-                .addClass('visible-xs');
+            $choices_mobile = $('.choices-mobile');
+            $('.choices-wrapper').prependTo($choices_mobile);
+            $('.choice-footer-container').appendTo($choices_mobile);
+            $('.choice-footnotes').appendTo($choices_mobile);
         }
     }
 
